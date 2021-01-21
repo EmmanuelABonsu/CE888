@@ -5,7 +5,7 @@
     "colab": {
       "name": "Lab_1.ipynb",
       "provenance": [],
-      "include_colab_link": true
+      "toc_visible": true
     },
     "kernelspec": {
       "name": "python3",
@@ -13,16 +13,6 @@
     }
   },
   "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/sagihaider/CE888_2021/blob/main/Lab_1/Exercise_Lab_1.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
     {
       "cell_type": "markdown",
       "metadata": {
@@ -45,10 +35,11 @@
       "source": [
         "def avg(marks):\n",
         "    # YOUR CODE HERE\n",
+        "    return sum(marks)/ len(marks)\n",
         "\n",
         "mark2 = [55,88,78,90,79]"
       ],
-      "execution_count": null,
+      "execution_count": 42,
       "outputs": []
     },
     {
@@ -60,7 +51,7 @@
         "# Only run this cell to check your answer. If it is true then no error will be raised\n",
         "assert(avg(mark2) == np.mean(mark2))"
       ],
-      "execution_count": null,
+      "execution_count": 43,
       "outputs": []
     },
     {
@@ -87,6 +78,7 @@
         "from math import pi # Use pi value from math package\n",
         "def areaCricle(radius):\n",
         "    # YOUR CODE HERE\n",
+        "    return pi * (radius **2)\n",
         "\n",
         "areaCricle(10)"
       ],
@@ -136,9 +128,13 @@
       "source": [
         "def reversed_list(in_list):\n",
         "    # YOUR CODE HERE\n",
-        "    raise NotImplementedError()"
+        "    # raise NotImplementedError()\n",
+        "    rev = []\n",
+        "    for item in in_list[::-1]:\n",
+        "      rev.append(item)\n",
+        "    return rev\n"
       ],
-      "execution_count": null,
+      "execution_count": 46,
       "outputs": []
     },
     {
@@ -150,7 +146,7 @@
         "# Only run this cell to check your answer. If it is true then no error will be raised\n",
         "assert(reversed_list([1, 2]) == [2, 1])"
       ],
-      "execution_count": null,
+      "execution_count": 47,
       "outputs": []
     },
     {
@@ -180,9 +176,14 @@
       "source": [
         "def bubble_sort(in_list):\n",
         "    # YOUR CODE HERE\n",
-        "    raise NotImplementedError()"
+        "    # raise NotImplementedError()\n",
+        "    for i in range(len(in_list)):\n",
+        "      for j in range(len(in_list) - 1):\n",
+        "        if in_list[j] > in_list[j + 1]:\n",
+        "          in_list[j], in_list[j + 1] = in_list[j + 1], in_list[j]\n",
+        "    return in_list"
       ],
-      "execution_count": null,
+      "execution_count": 48,
       "outputs": []
     },
     {
@@ -195,7 +196,7 @@
         "assert(bubble_sort([37, 42, 9, 19, 35, 4, 53, 22]) == [4, 9, 19, 22, 35, 37, 42, 53])\n",
         "assert(bubble_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5])"
       ],
-      "execution_count": null,
+      "execution_count": 49,
       "outputs": []
     },
     {
@@ -231,16 +232,22 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "dlMnigUrvxb9",
-        "outputId": "3c0e1b3a-32f6-4623-d810-805a733a2dc8"
+        "outputId": "695d6290-1ba6-4241-d881-9628bfafc163"
       },
       "source": [
         "def Fibonacci(n):\n",
         "\n",
-        "  raise NotImplementedError()\n",
+        "  # raise NotImplementedError()\n",
+        "  if n == 0 or n == 1:\n",
+        "    return 0\n",
+        "  elif n == 2:\n",
+        "    return 1\n",
+        "  else:\n",
+        "    return Fibonacci(n - 1) + Fibonacci(n - 2)\n",
         "\n",
         "Fibonacci(1)"
       ],
-      "execution_count": null,
+      "execution_count": 50,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -252,7 +259,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 4
+          "execution_count": 50
         }
       ]
     },
@@ -266,7 +273,7 @@
         "assert(Fibonacci(7) == 8)\n",
         "assert(Fibonacci(9) == 21)"
       ],
-      "execution_count": null,
+      "execution_count": 51,
       "outputs": []
     }
   ]
