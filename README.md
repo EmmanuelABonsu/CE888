@@ -2,7 +2,8 @@
 Course Work for Data Science and Decision Making
 
 # How to run project code
-1. Navigate to google colab using the colab button on the top.
-2. Download the train and test data set in the project folder
-3. Update the corresponding file path (train_path and test_path) to the file directory of your data replica
-4. Run the colab notebook (Runtime -> Run All)
+1. Download the .ipynb files (feature_extraction_with_xception.ipynb and evaluate.ipynb)
+2. Upload the files in a Kaggle kernel
+3. Add the fire-detection-data available here https://www.kaggle.com/emmanuelbonsu/fire-detection-data
+4. Update the corresponding file path if necessary
+5. Run the notebook by clicking on the 'Run All' button
